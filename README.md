@@ -40,3 +40,8 @@ s
 * `npm run watch` - Continuously build development files into the `/public` directory.
 * `npm run build` - Build the development files once into the `/public` directory
 * `npm run build:prod` - Build the production files once into the `/public` directory.
+
+## Deployment
+
+1. Run `npm run build:prod` to build out the production-ready version of the website.
+2. Publish the files of the project's `/public` directory to your production server.
