@@ -45,3 +45,12 @@ s
 
 1. Run `npm run build:prod` to build out the production-ready version of the website.
 2. Publish the files of the project's `/public` directory to your production server.
+
+## Creator
+
+**Jason Bobich**
+
+* <http://jasonbobich.com>
+* <https://twitter.com/jasonbobich>
+* <http://themeblvd.com>
+* <http://wpjumpstart.com>
