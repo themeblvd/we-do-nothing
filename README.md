@@ -31,12 +31,12 @@ s
         * `/partials` - All Sass partial files.
         * `main.scss` - Main Sass file where partials are included.
     * `svg/` - SVG files.
-* `site.config.js` - Configuration file including website title and an object website's pages, which should match files in `/src/html/pages`.
+* `site.config.js` - Website title and an object of website's pages, matching files in `/src/html/pages`.
 
 ## Project Commands
 
-* `npm run start` - Watch for changes & continuously build into the `/public` directory.
+* `npm run start` - Watch for changes & continuously build development files into the `/public` directory.
 * `npm run server` - Run the development server.
 * `npm run watch` - Continuously build development files into the `/public` directory.
-* `npm run build` - Build the development files once.
-* `npm run build:prod` - Build the production files once.
+* `npm run build` - Build the development files once into the `/public` directory
+* `npm run build:prod` - Build the production files once into the `/public` directory.
