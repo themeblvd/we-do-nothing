@@ -1,0 +1,90 @@
+//
+// About
+//
+
+.has-about {
+  .row {
+    display: flex;
+    margin: 0 -30px;
+  }
+  .column {
+    padding: 0 30px;
+    width: 33.3%;
+  }
+  h2 {
+    margin-top: 10px;
+  }
+  .small-header {
+    color: #555;
+    font-size: 0.9rem;
+  }
+  img {
+    width: 200px;
+  }
+}
+
+//
+// Team Intro
+//
+
+.has-team-intro {
+  background-color: $clr-primary;
+  color: #fff;
+  font-size: 20px;
+
+  h3 {
+    color: #fff;
+    font-size: 30px;
+  }
+}
+
+//
+// Team Members
+//
+
+.has-team {
+  background-color: #101010;
+
+  > .wrap {
+    display: flex;
+  }
+  .team-member {
+    position: relative;
+    width: 25%;
+  }
+  .team-member .info {
+    color: #fff;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translate(0, -50%);
+    transition: opacity 0.5s $transition-timing;
+    z-index: 2;
+  }
+  .team-member .info h4 {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .team-member .info .tagline {
+    color: #fff;
+    font-size: 0.8rem;
+  }
+  .team-member img {
+    display: block;
+    position: relative;
+    transition: opacity 0.5s $transition-timing;
+    -webkit-transform: translateZ(0);
+    z-index: 1;
+  }
+  .team-member:hover .info {
+    opacity: 1;
+  }
+  .team-member:hover img {
+    opacity: 0.05;
+  }
+}

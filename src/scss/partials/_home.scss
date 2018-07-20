@@ -1,0 +1,176 @@
+//
+// Image Boxes
+//
+
+.has-image-boxes {
+  position: relative;
+  z-index: $z-index-content;
+
+  @include min-width(md) {
+    > .wrap {
+      display: flex;
+    }
+  }
+}
+
+//
+// Info
+//
+
+.has-info {
+  background: $clr-primary url('../img/info-bg.jpg');
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  padding-bottom: 100px;
+  text-align: center;
+
+  &:before {
+    content: '';
+    background-color: $clr-primary;
+    display: block;
+    opacity: 0.95;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .info-lead {
+    margin: 0 auto 80px auto;
+    max-width: 535px;
+    position: relative;
+    z-index: 1;
+
+    h2 {
+      color: #fff;
+    }
+  }
+  .info-group {
+    position: relative;
+    z-index: 1;
+    @include min-width(md) {
+      display: flex;
+    }
+  }
+  .info {
+    margin-bottom: 40px;
+    padding: 0 40px;
+    @include min-width(md) {
+      margin-bottom: 0;
+      width: 33.33%;
+    }
+    h3 {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      margin-bottom: 14px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+//
+// Video
+//
+
+.has-video {
+  background: url('../img/video-bg.jpg') center center;
+  background-size: cover;
+  height: 650px;
+  overflow: hidden;
+  position: relative;
+  @include max-width(md) {
+    height: 400px;
+  }
+  @include max-width(sm) {
+    height: 250px;
+  }
+
+  .bg-diag-shade {
+    fill: $clr-secondary;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .play-btn {
+    z-index: 2;
+  }
+}
+
+//
+// Quote
+//
+
+.has-quote {
+  background: #f2f2f2 url('../img/quote-bg.jpg') center bottom;
+  background-size: cover;
+  overflow: hidden;
+  padding: 200px $gutter-mobile;
+  position: relative;
+  @include max-width(md) {
+    padding: 100px $gutter-mobile;
+  }
+
+  &:before {
+    content: '';
+    background: #f8f8f8;
+    display: block;
+    opacity: 0.95;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  @include min-width(lg) {
+    &:after {
+      content: 'Inspiration';
+      display: block;
+      color: rgba(0, 0, 0, 0.05);
+      font-size: 180px;
+      font-weight: 700;
+      letter-spacing: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+  }
+  blockquote {
+    font-size: 40px;
+    margin: 0 auto;
+    max-width: 700px;
+    position: relative;
+    text-align: center;
+    z-index: 3;
+    @include max-width(md) {
+      font-size: 20px;
+    }
+  }
+  blockquote cite {
+    font-size: 20px;
+    @include max-width(md) {
+      font-size: 14px;
+    }
+  }
+}
+
+//
+// Icon Boxes
+//
+
+@include min-width(md) {
+  .has-icon-boxes {
+    padding: 100px 0;
+  }
+}

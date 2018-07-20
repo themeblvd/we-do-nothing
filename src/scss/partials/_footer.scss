@@ -1,0 +1,79 @@
+//
+// Site Footer
+//
+
+.site-footer {
+  background-color: $clr-primary;
+  color: #fff;
+  font-size: 14px;
+  padding: 40px $gutter-mobile;
+  text-align: center;
+
+  .has-copyright a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    text-decoration: none;
+  }
+  .has-copyright a:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+  .contact-menu {
+    margin-top: 20px;
+  }
+  @include min-width(md) {
+    padding: 0 $gutter-mobile;
+    text-align: initial;
+
+    > .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      margin: 0 auto;
+      max-width: $max-width-lg;
+    }
+    .contact-menu {
+      margin-top: 0;
+    }
+  }
+}
+
+//
+// Call-to-Action
+//
+
+.has-call-to-action {
+  background: #f2f2f2;
+  padding: 50px $gutter-mobile;
+  text-align: center;
+
+  .wrap > span {
+    display: block;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+
+  @include min-width(md) {
+    text-align: left;
+
+    > .wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+    > .wrap > span:first-child {
+      font-size: 20px;
+      width: 80%;
+    }
+    > .wrap > span:last-child {
+      margin-left: auto;
+      width: 20%;
+    }
+    > .wrap > span:last-child > .btn {
+      float: right;
+      margin-top: 0;
+    }
+  }
+}

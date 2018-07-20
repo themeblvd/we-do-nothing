@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <body>
+
+        <div class="site-container">
+
+            <!-- HEADER -->
+
+            <header class="site-header">
+
+                <div class="wrap">
+
+                    <div class="item has-menu-icon">
+                        <a href="#" class="menu-icon open-panel" title="Site Menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+
+                    <div class="item has-site-logo">
+                        <%= require('html-loader?attrs=img:src img:data-2x!./partials/logo.html') %>
+                    </div>
+
+                    <div class="item has-contact-menu">
+                        <%= require('html-loader!./partials/contact-menu.html') %>
+                    </div>
+
+                </div><!-- .wrap -->
+
+            </header><!-- .site-header -->
+
+            <!-- FEATURED AREA -->
+
+            <section class="<%= htmlWebpackPlugin.options.page == 'index' ? 'section-home-hero' : 'section-hero' %>">
+
+                <div class="hero-unit">
+
+                    <div class="wrap">
+                        <% if (htmlWebpackPlugin.options.page == 'index') { %>
+                            <span class="tagline small-header">Doing nothing since 2005</span>
+                            <h1 class="hero-title">We're not quite sure what we do, but you'll probably love it.</h1>
+                            <a href="#" title="Learn more about our company" class="btn transparent"><span>Learn More</span></a>
+                        <% } else { %>
+                            <h1 class="page-title"><%= htmlWebpackPlugin.options.name %></h1>
+                        <% } %>
+                    </div><!-- .wrap -->
+
+                </div><!-- .hero-unit -->
+
+                <%= require('html-loader!./partials/hero-bg.html') %>
+
+            </section><!-- .home-hero -->
+
+            <!-- CONTENT -->
+
+            <%= require(`html-loader?attrs=img:src img:data-2x!./pages/${htmlWebpackPlugin.options.page}.html`) %>
+
+            <!-- CALL-TO-ACTION -->
+
+            <section class="section-content has-call-to-action">
+
+                <div class="wrap">
+
+                    <span>Nullam lobortis massa in sodales porta. Proin vehicula justo tristique odio pellentesque, in laoreet massa efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus.</span>
+
+                    <span><a href="#" class="btn"><span>Contact Us</span></a></span>
+
+                </div><!-- .wrap -->
+
+            </section><!-- .section-content.has-call-to-action -->
+
+            <!-- SITE FOOTER -->
+
+            <footer class="site-footer">
+
+                <div class="wrap">
+
+                    <div class="item has-copyright">
+                        &copy; 2018 We Do Nothing. Website by <a href="http://jasonbobich.com" title="Jason Bobich" target="_blank">Jason Bobich</a>.
+                    </div>
+
+                    <div class="item has-contact-menu">
+                        <%= require('html-loader!./partials/contact-menu.html') %>
+                    </div>
+
+                </div><!-- .wrap -->
+
+            </footer><!-- .site-footer -->
+
+        </div><!-- .site-container -->
+
+        <a href="#" class="panel-icon close-panel">
+            <i class="icon-arrow-left"></i>
+        </a>
+
+        <div class="site-panel">
+
+            <ul class="site-menu">
+                <% for (let i = 0; i < htmlWebpackPlugin.options.sitePages.length; i++) { %>
+                    <li><a href="./<%= htmlWebpackPlugin.options.sitePages[i].slug %>.html" title="<%= htmlWebpackPlugin.options.sitePages[i].title %>"><%= htmlWebpackPlugin.options.sitePages[i].title %></a></li>
+                <% } %>
+            </ul>
+
+            <ul class="info-menu">
+                <li>T: 907-123-4567</li>
+                <li>E: jason@doesnothing.com</li>
+            </ul>
+
+            <%= require('html-loader!./partials/contact-menu.html') %>
+
+        </div><!-- .site-panel -->
+
+    </body>
+</html>

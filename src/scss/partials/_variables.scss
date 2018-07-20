@@ -1,0 +1,32 @@
+// Colors
+$clr-primary: #2f88d6;
+$clr-secondary: #2ac4ea;
+
+// Responsive
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1600px
+);
+
+$gutter-mobile: 40px;
+
+$max-width-lg: 1150px;
+$max-width-md: 940px;
+$max-width-sm: 720px;
+$max-width-xs: 480px;
+
+// Z-Index, Top Level
+$z-index-panel: 1;
+$z-index-container: 2;
+$z-index-panel-icon: 3;
+
+// Z-Index, Within Container
+$z-index-bg: 1;
+$z-index-content: 2;
+$z-index-header: 3;
+
+// Animation Timing
+$transition-timing: cubic-bezier(0.2, 1, 0.3, 1);

@@ -1,0 +1,50 @@
+body {
+  background-color: $clr-secondary;
+}
+.site-container {
+  position: relative;
+  z-index: $z-index-container;
+}
+.section-content {
+  background-color: #fff;
+  padding: 80px $gutter-mobile;
+  position: relative;
+  z-index: $z-index-content;
+  @include max-width(md) {
+    padding: 60px $gutter-mobile;
+  }
+
+  > .wrap {
+    margin: 0 auto;
+    max-width: $max-width-lg;
+
+    @include max-width(lg) {
+      max-width: $max-width-md;
+    }
+    @include max-width(md) {
+      max-width: $max-width-sm;
+    }
+    @include max-width(sm) {
+      max-width: $max-width-xs;
+    }
+  }
+  > .wrap.condensed {
+    max-width: 800px;
+
+    @include max-width(md) {
+      max-width: $max-width-sm;
+    }
+    @include max-width(sm) {
+      max-width: $max-width-xs;
+    }
+  }
+  .condensed img {
+    border-radius: 2px;
+
+    @include min-width(lg) {
+      margin: 0 -10%;
+      max-width: 120%;
+      width: 120%;
+    }
+  }
+}

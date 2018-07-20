@@ -1,0 +1,5 @@
+node_modules
+.tags
+.tags1
+public/*
+!public/README.md

@@ -1,0 +1,83 @@
+///
+/// Max-width media query.
+///
+/// @param {String} $size - Size of breakpoint.
+///
+@mixin max-width($size) {
+  @if ($size == 'xl') {
+    @media (max-width: map-get($breakpoints, xl) - 1) {
+      @content;
+    }
+  } @else if ($size == 'lg') {
+    @media (max-width: map-get($breakpoints, lg) - 1) {
+      @content;
+    }
+  } @else if ($size == 'md') {
+    @media (max-width: map-get($breakpoints, md) - 1) {
+      @content;
+    }
+  } @else if ($size == 'sm') {
+    @media (max-width: map-get($breakpoints, sm) - 1) {
+      @content;
+    }
+  } @else if ($size == 'xs') {
+    @media (max-width: map-get($breakpoints, xs) - 1) {
+      @content;
+    }
+  } @else if ($size == '') {
+    @content;
+  } @else {
+    @media (max-width: $size) {
+      @content;
+    }
+  }
+}
+
+///
+/// Min-width media query.
+///
+/// @param {String} $size - Size of breakpoint.
+///
+@mixin min-width($size) {
+  @if ($size == 'xl') {
+    @media (min-width: map-get($breakpoints, xl)) {
+      @content;
+    }
+  } @else if ($size == 'lg') {
+    @media (min-width: map-get($breakpoints, lg)) {
+      @content;
+    }
+  } @else if ($size == 'md') {
+    @media (min-width: map-get($breakpoints, md)) {
+      @content;
+    }
+  } @else if ($size == 'sm') {
+    @media (min-width: map-get($breakpoints, sm)) {
+      @content;
+    }
+  } @else if ($size == 'xs') {
+    @media (min-width: map-get($breakpoints, xs)) {
+      @content;
+    }
+  } @else if ($size == '') {
+    @content;
+  } @else {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+///
+/// Elements vertically spaced within a document should
+/// sit flush against the top and bottom of their
+/// outter containers.
+///
+@mixin margin-vert-flush {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

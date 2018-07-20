@@ -1,0 +1,166 @@
+//
+// Outer Section
+//
+
+.section-home-hero,
+.section-hero {
+  position: relative;
+}
+
+//
+// Hero Unit
+//
+
+.hero-unit {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: $max-width-lg;
+  padding: 60px $gutter-mobile;
+  position: relative;
+  text-align: center;
+  z-index: $z-index-content;
+
+  > .wrap {
+    max-width: 500px;
+  }
+  h1 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0 0 30px 0;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+  .tagline {
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+}
+@include min-width(md) {
+  .hero-unit {
+    padding: 100px $gutter-mobile;
+
+    > .wrap {
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    .tagline {
+      font-size: 16px;
+    }
+  }
+}
+@include min-width(lg) {
+  .hero-unit {
+    height: 400px;
+    padding: 90px 0 0 0;
+    text-align: initial;
+
+    > .wrap {
+      max-width: 840px;
+    }
+    h1 {
+      font-size: 70px;
+    }
+  }
+}
+@include max-width(lg) {
+  // Override JavaScript.
+  .hero-unit .wrap {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+  }
+}
+
+//
+// Hero Background
+//
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: $z-index-bg;
+
+  &:before {
+    content: '';
+    background: linear-gradient(200deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%);
+    display: block;
+    opacity: 0.75;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  figure {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+  }
+}
+@include min-width(lg) {
+  .hero-bg {
+    img {
+      min-height: 130%;
+      position: absolute;
+      top: -200px;
+    }
+  }
+}
+@include max-width(lg) {
+  // Override JavaScript.
+  .hero-bg img {
+    transform: translate(0, 0) !important;
+  }
+}
+
+//
+// Home Hero Unit
+//
+.section-home-hero .hero-unit h1 {
+  letter-spacing: 0;
+}
+@include min-width(lg) {
+  .section-home-hero {
+    .hero-unit,
+    .hero-bg {
+      height: 100vh;
+    }
+    .hero-unit {
+      justify-content: flex-start;
+      padding-top: 0;
+    }
+    .hero-unit h1 {
+      font-size: 60px;
+    }
+    .hero-bg {
+      padding: 0;
+    }
+    .hero-bg img {
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+//
+// Body and container, when panel shows.
+//
+
+.site-container {
+    transition: transform .8s $transition-timing;
+}
+.panel-on {
+    overflow: hidden;
+}
+@include max-width(lg) {
+    .panel-on {
+        .site-container {
+            transform: translate(300px, 0);
+        }
+    }
+}
+@include min-width(lg) {
+    .panel-on .site-container {
+        height: 100vh;
+        overflow: hidden;
+        transform: scale(.9) translate(20vw, 0);
+    }
+}
+
+//
+// Hidden Panel
+//
+
+.site-panel {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    opacity: 0;
+    padding: 30px;
+    position: fixed;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    z-index: $z-index-panel;
+
+    .site-menu {
+        margin-bottom: 40px;
+    }
+    .site-menu a {
+        color: #fff;
+        display: inline-block;
+        font-size: 24px;
+        line-height: 1;
+        padding: 8px 0;
+        position: relative;
+        text-decoration: none;
+    }
+    .site-menu a:hover {
+        color: #fff;
+    }
+    .site-menu a:before {
+        content: "";
+        display: block;
+        background-color: #fff;
+        border-radius: 1px;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: width .5s $transition-timing,
+                    opacity .5s $transition-timing;
+        width: 0%;
+        height: 3px;
+    }
+    .site-menu a:hover:before {
+        opacity: 1;
+        width: 100%;
+    }
+    .info-menu {
+        margin-bottom: 20px;
+    }
+    .info-menu a {
+        color: #fff;
+    }
+    .contact-menu {
+        justify-content: flex-start;
+    }
+}
+.panel-on,
+.panel-animating-out {
+    .site-panel {
+        opacity: 1;
+    }
+}
+
+//
+// Panel Icon
+//
+
+.panel-icon {
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    display: none;
+    opacity: 0;
+    padding: 5px;
+    position: absolute;
+    top: 3%;
+    left: 21vw;
+    transition: border-color .5s $transition-timing,
+                opacity .5s $transition-timing,
+                transform .5s $transition-timing;
+    width: 60px;
+    height: 60px;
+    z-index: $z-index-panel-icon;
+
+    &:hover {
+        background-color: $clr-primary;
+        color: #fff;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, .25);
+        transform: translate(0, -2px);
+    }
+    &:active {
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, .25);
+        transform: translate(0, 0);
+    }
+    i {
+        font-size: 28px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+    }
+}
+.panel-on .panel-icon {
+    display: block;
+    opacity: 1;
+}
+@include max-width(lg) {
+    .panel-icon {
+        top: 5px;
+        left: 275px;
+        width: 50px;
+        height: 50px;
+    }
+}

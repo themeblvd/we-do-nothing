@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'icons';
+  src: url('../font/icons.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.icon-github,
+.icon-instagram,
+.icon-facebook,
+.icon-twitter,
+.icon-arrow-left,
+.icon-arrow-right {
+  font-family: 'icons' !important; // !important to prevent issues with browser extensions that change fonts
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-github:before {
+  content: '\e902';
+}
+.icon-instagram:before {
+  content: '\e903';
+}
+.icon-facebook:before {
+  content: '\e904';
+}
+.icon-twitter:before {
+  content: '\e905';
+}
+.icon-arrow-right:before {
+  content: '\e900';
+}
+.icon-arrow-left:before {
+  content: '\e901';
+}

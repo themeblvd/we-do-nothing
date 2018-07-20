@@ -1,0 +1,200 @@
+//
+// Buttons
+//
+
+.btn {
+  background: linear-gradient(140deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  font-family: 'Muli';
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 18px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  &.transparent {
+    background: transparent;
+    border-color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  span {
+    position: relative;
+    z-index: 2;
+  }
+  &:before {
+    content: '';
+    background: $clr-primary;
+    border: 2px solid $clr-primary;
+    border-radius: 4px;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+  }
+  &.transparent:before {
+    background: #fff;
+    border-color: #fff;
+  }
+  &:hover:before {
+    opacity: 1;
+  }
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-shadow: none;
+    transform: translate(0, -3px);
+  }
+  &.transparent:hover {
+    color: $clr-primary;
+  }
+  &:active {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+//
+// Play Button
+//
+
+$size: 100px;
+
+.play-btn {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin-top: -(1/2 * $size);
+  margin-left: -(1/2 * $size);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: box-shadow 0.5s $transition-timing, transform 0.5s $transition-timing;
+  width: $size;
+  height: $size;
+
+  &:hover {
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+    transform: translate(0, -4px);
+  }
+  &:active {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(0, 0);
+  }
+  img {
+    display: block;
+    width: $size;
+  }
+}
+
+//
+// Image Boxes
+//
+
+.image-box {
+  background-color: #101010;
+  color: #fff;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.8s $transition-timing;
+
+  @include max-width(lg) {
+    font-size: 14px;
+  }
+  span {
+    display: block;
+  }
+  .inner-content {
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    z-index: 10;
+  }
+  .inner-content .h2 {
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1px;
+    @include max-width(lg) {
+      font-size: 20px;
+    }
+  }
+  img {
+    display: block;
+    opacity: 0.4;
+    transition: opacity 0.8s $transition-timing, transform 0.8s $transition-timing;
+  }
+  &:before {
+    content: '\e900';
+    font-family: 'icons';
+    font-size: 30px;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: opacity 0.8s $transition-timing;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+  }
+  &:hover {
+    background-color: $clr-secondary;
+    color: #fff;
+  }
+  &:hover img {
+    opacity: 0.1;
+    transform: scale(1.1);
+  }
+  &:hover:before {
+    opacity: 1;
+  }
+}
+
+//
+// Icon Boxes
+//
+
+$gutter: 30px;
+
+.icon-box-group {
+  @include min-width(md) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$gutter;
+  }
+
+  .icon-box {
+    padding: $gutter;
+    @include min-width(md) {
+      width: 25%;
+    }
+  }
+  .icon-box img {
+    max-width: 60px;
+  }
+  .icon-box h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .icon-box p {
+    margin: 0;
+  }
+}

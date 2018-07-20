@@ -1,0 +1,115 @@
+//
+// Header Structure
+//
+
+.site-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0 $gutter-mobile;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $z-index-header;
+
+  > .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 89px;
+    margin: 0 auto;
+    max-width: $max-width-lg;
+  }
+  > .wrap > .item {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  .menu-icon {
+    margin-right: auto;
+  }
+  .site-logo img {
+    display: block;
+  }
+  .contact-menu {
+    margin-left: auto;
+  }
+  .contact-menu a {
+    font-size: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 0.5s $transition-timing;
+
+    &:hover {
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+      transform: translate(0, -2px);
+    }
+    &:active {
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+      transform: translate(0, 0);
+    }
+  }
+}
+@include max-width(lg) {
+  .site-header {
+    background-color: $clr-primary;
+    border: none;
+    position: relative;
+
+    > .wrap {
+      justify-content: space-between;
+    }
+    > .wrap > .item {
+      flex: none;
+    }
+    > .wrap > .item.has-contact-menu {
+      display: none;
+    }
+  }
+}
+@include max-width(md) {
+  .site-header {
+    > .wrap {
+      height: 60px;
+    }
+    .site-logo img {
+      max-height: 48px;
+      width: auto;
+    }
+  }
+}
+
+//
+// Menu Icon
+//
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(0, 0);
+  transition: transform 0.25s ease-in-out;
+  width: 24px;
+  height: 20px;
+
+  span {
+    background-color: #fff;
+    border-radius: 1px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    display: block;
+    height: 2px;
+  }
+  span:last-child {
+    width: 66.66%;
+  }
+  &:hover {
+    transform: translate(0, -2px);
+  }
+  &:hover span {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  }
+  &:active {
+    transform: translate(0, 0);
+  }
+  &:active span {
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+}
